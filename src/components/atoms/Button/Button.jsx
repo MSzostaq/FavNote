@@ -1,20 +1,21 @@
 import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  background-color: #e6e6e6;
-  border: none;
+  background-color: ${({ theme }) => theme.primary};
+  border: 0;
   border-radius: 50px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
+  padding: 0;
   width: 220px;
   height: 47px;
 
   ${({ secondary }) =>
     secondary &&
     css`
-      background-color: #ffd82b;
+      background-color: #e6e6e6;
       font-size: 10px;
       width: 105px;
       height: 30px;
