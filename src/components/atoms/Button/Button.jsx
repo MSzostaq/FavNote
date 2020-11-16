@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Button = styled.button`
   background-color: ${({ theme }) => theme.article};
@@ -14,7 +14,7 @@ const Button = styled.button`
 
   ${({ secondary }) =>
     secondary &&
-    css`
+    `
       background-color: #e6e6e6;
       font-size: 10px;
       width: 105px;
