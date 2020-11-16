@@ -10,7 +10,8 @@ import twitterIcon from "../../../assets/icons/twitter.svg";
 
 const StyledWrapper = styled.nav`
   align-items: center;
-  background-color: ${({ theme }) => theme.note};
+  background-color: ${({ activeColor, theme }) =>
+    activeColor ? theme[activeColor] : theme.note};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,8 +53,8 @@ const StyledLinksList = styled.ul`
   padding: 0;
 `;
 
-const Sidebar = () => (
-  <StyledWrapper>
+const Sidebar = ({ pageType }) => (
+  <StyledWrapper activeColor={pageType}>
     <StyledLogoLink to="/" />
     <StyledLinksList>
       <li>

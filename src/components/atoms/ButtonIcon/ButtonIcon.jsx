@@ -4,6 +4,7 @@ const ButtonIcon = styled.button`
   background-color: ${({ active }) => (active ? "#ffffff" : "transparent")};
   background-image: url(${({ icon }) => icon});
   background-position: 50% 50%;
+  background-repeat: no-reperat;
   background-size: 40%;
   border: 0;
   border-radius: 20px;

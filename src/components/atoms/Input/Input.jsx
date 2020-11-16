@@ -1,5 +1,5 @@
-import styled, { css } from "styled-component";
-import magnifierIcon from "../../../assets/magnifier";
+import styled from "styled-components";
+import magnifierIcon from "../../../assets/icons/magnifier.svg";
 
 const Input = styled.input`
   background-color: ${({ theme }) => theme.grey100};
@@ -17,7 +17,7 @@ const Input = styled.input`
 
   ${({ search }) =>
     search &&
-    css`
+    `
       background-image: url(${magnifierIcon});
       background-size: 15px;
       background-position: 15px 50%;

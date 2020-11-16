@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Button from "../../atoms/Button/Button";
 import Heading from "../../atoms/Heading/Heading";
 import LinkIcon from "../../../assets/icons/link.svg";
@@ -27,7 +27,7 @@ const InnerWrapper = styled.div`
 
   ${({ flex }) =>
     flex &&
-    css`
+    `
       display: flex;
       flex-direction: column;
       justify-content: space-between;
