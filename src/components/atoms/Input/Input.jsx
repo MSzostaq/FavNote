@@ -7,7 +7,7 @@ const Input = styled.input`
   border-radius: 50px;
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: ${({ theme }) => theme.regular};
-  padding: 15px, 30px;
+  padding: 15px 30px;
 
   ::placeholder {
     color: ${({ theme }) => theme.grey300};
@@ -20,7 +20,7 @@ const Input = styled.input`
     `
       background-image: url(${magnifierIcon});
       background-size: 15px;
-      background-position: 15px 50%;
+      background-position: 10px 50%;
       background-repeat: no-repeat;
       font-size: ${({ theme }) => theme.fontSize.xs}
       padding: 10px 20px 10px 40px;

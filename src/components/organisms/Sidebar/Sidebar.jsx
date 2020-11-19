@@ -32,8 +32,8 @@ const StyledLogoLink = styled(NavLink)`
   border: none;
   display: block;
   margin-bottom: 10vh;
-  width: 67px;
-  height: 67px;
+  width: 77px;
+  height: 77px;
 `;
 
 const StyledLogoutButton = styled(ButtonIcon)`

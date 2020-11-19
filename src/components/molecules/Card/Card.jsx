@@ -8,11 +8,11 @@ import LinkIcon from "../../../assets/icons/link.svg";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 
 const StyledWrapper = styled.div`
-  box-shadow: 0 10px 30px -10px hsla(0, 0%, 0% 0.1);
+  box-shadow: 0 10px 30px 10px hsla(0, 0%, 0% 0.1);
   border-radius: 10px;
   display: grid;
   grid-template-rows: 0.25fr 1fr;
-  min-height: 380px;
+  min-height: 350px;
   overflow: hidden;
 `;
 
@@ -20,7 +20,7 @@ const InnerWrapper = styled.div`
   padding: 17px 30px;
   position: relative;
   background-color: ${({ activeColor, theme }) =>
-    activeColor ? theme[activeColor] : "#ffffff"};
+    activeColor ? theme[activeColor] : "#fff"};
 
   :first-of-type {
     z-index: 99;
@@ -37,8 +37,8 @@ const InnerWrapper = styled.div`
 
 const DateInfo = styled(Paragraph)`
   font-size: ${({ theme }) => theme.fontSize.xs};
-  font-weight: ${({ theme }) => theme.bold};
-  margin: 0 0 0 10px;
+  font-weight: ${({ theme }) => theme.light};
+  margin: 0 5px 5px;
 `;
 
 const StyledHeading = styled(Heading)`
@@ -49,14 +49,14 @@ const StyledAvatar = styled.img`
   border: 5px solid ${({ theme }) => theme.twitters};
   border-radius: 50px;
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 15px;
+  top: 15px;
   width: 76px;
   height: 76px;
 `;
 
 const StyledLinkButton = styled.a`
-  background: "#ffffff" url(${LinkIcon}) no-repeat;
+  background: "#fff" url(${LinkIcon}) no-repeat;
   background-position: 50%;
   background-size: 60%;
   border-radius: 50px;

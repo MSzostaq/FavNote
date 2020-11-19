@@ -7,17 +7,17 @@ import Paragraph from "../components/atoms/Paragraph/Paragraph";
 import UserPageTemplate from "./UserPageTemplate";
 
 const StyledWrapper = styled.div`
-  padding: 25px 150px 25px 70px;
+  padding: 0 100px 25px 70px;
 `;
 
 const StyledGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 85px;
 `;
 
 const StyledPageHeader = styled.div`
-  margin: 25px 0 50px 0;
+  margin: 0 0 50px 0;
 `;
 
 const StyledHeading = styled(Heading)`
