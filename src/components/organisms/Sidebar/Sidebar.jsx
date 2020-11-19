@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import ButtonIcon from "../../../components/atoms/ButtonIcon/ButtonIcon";
 import bulbIcon from "../../../assets/icons/bulb.svg";
 import logoIcon from "../../../assets/icons/logo.svg";
@@ -55,12 +56,12 @@ const StyledLinksList = styled.ul`
 
 const Sidebar = ({ pageType }) => (
   <StyledWrapper activeColor={pageType}>
-    <StyledLogoLink to="/" />
+    <StyledLogoLink to="/notes" />
     <StyledLinksList>
       <li>
         <StyledButtonIcon
           as={NavLink}
-          to="/"
+          to="/notes"
           icon={penIcon}
           activeclass="active"
         />
@@ -85,5 +86,13 @@ const Sidebar = ({ pageType }) => (
     <StyledLogoutButton as={NavLink} to="/login" icon={logoutIcon} />
   </StyledWrapper>
 );
+
+Sidebar.propTypes = {
+  pageType: PropTypes.oneOf(["articles", "notes", "twitters"]),
+};
+
+Sidebar.defaultProps = {
+  pageType: "notes",
+};
 
 export default Sidebar;

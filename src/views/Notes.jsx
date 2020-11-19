@@ -1,16 +1,47 @@
 import React from "react";
-import UserPageTemplate from "../templates/UserPageTemplate";
+import GridTemplate from "../templates/GridTemplate";
 import Card from "../components/molecules/Card/Card";
 
+const notes = [
+  {
+    title: "Wake me up when Vue ends",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi",
+    created: "1 day",
+  },
+  {
+    title: "Como es An Gular?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi",
+    created: "1 day",
+  },
+  {
+    title: "Du bist Reactish",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi",
+    created: "5 days",
+  },
+  {
+    title: "Reactuj się kto moze!",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi",
+    created: "10 days",
+  },
+];
+
 const Notes = () => (
-  <UserPageTemplate pageType="note">
-    <Card cardType="note" />
-    <Card cardType="note" />
-    <Card cardType="note" />
-    <Card cardType="note" />
-    <Card cardType="note" />
-    <Card cardType="note" />
-  </UserPageTemplate>
+  <GridTemplate pageType="notes">
+    {notes.map(({ content, created, id, title }) => (
+      <Card
+        id={id}
+        cardType="notes"
+        content={content}
+        created={created}
+        title={title}
+        key={id}
+      />
+    ))}
+  </GridTemplate>
 );
 
 export default Notes;
