@@ -7,7 +7,7 @@ import Paragraph from "../components/atoms/Paragraph/Paragraph";
 import UserPageTemplate from "./UserPageTemplate";
 
 const StyledWrapper = styled.div`
-  padding: 0 100px 25px 70px;
+  padding: 20px 20px 20px 20px;
 `;
 
 const StyledGrid = styled.div`
