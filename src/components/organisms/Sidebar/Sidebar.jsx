@@ -43,6 +43,8 @@ const StyledLogoutButton = styled(ButtonIcon)`
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
+  height: 64px;
+  width: 64px;
   background-repeat: no-repeat;
   margin-bottom: 25px;
   margin-top: auto;
