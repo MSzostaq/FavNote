@@ -41,12 +41,13 @@ const Articles = () => (
   <GridTemplate pageType="articles">
     {articles.map(({ articleUrl, content, created, id, title }) => (
       <Card
-        cardType="articles"
+        id={id}
         articleUrl={articleUrl}
+        cardType="articles"
         content={content}
         created={created}
-        title={title}
         key={id}
+        title={title}
       />
     ))}
   </GridTemplate>

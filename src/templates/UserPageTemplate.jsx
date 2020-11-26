@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   padding-left: 100px;
 `;
 
-// set default props like in ES6
 const UserPageTemplate = ({ children, pageType = "notes" }) => (
   <Wrapper>
     <Sidebar pageType={pageType} />

@@ -11,6 +11,10 @@ const StyledWrapper = styled.div`
   max-width: 200vh;
   padding: 25px 150px 25px 75px;
   position: relative;
+
+  @media (max-width: 1200px) {
+    max-width: 80vw;
+  }
 `;
 
 const StyledPageHeader = styled.div`
@@ -68,7 +72,12 @@ const DetailsTemplate = ({
       {pageType === "articles" && (
         <StyledLink href={articleUrl}>Open article</StyledLink>
       )}
-
+      {pageType === "twitters" && (
+        <StyledImage
+          alt={title}
+          src={`https://avatars.io/twitter/${twitterName}`}
+        />
+      )}
       <Button as={Link} to={`/${pageType}`}>
         save/close
       </Button>
