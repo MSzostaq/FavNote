@@ -31,7 +31,7 @@ const StyledHeading = styled(Heading)`
 
 const StyledParagraph = styled(Paragraph)`
   font-weight: ${({ theme }) => theme.light};
-  margin: 25px 25px;
+  margin: 0 px;
 `;
 
 const StyledLink = styled.a`
@@ -44,12 +44,12 @@ const StyledLink = styled.a`
 `;
 
 const StyledImage = styled.img`
-  border-radius: 50%;
-  height: 120px;
-  width: 120px;
   position: absolute;
-  top: 50px;
   right: -80px;
+  top: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 `;
 
 const DetailsTemplate = ({
@@ -75,11 +75,11 @@ const DetailsTemplate = ({
       {pageType === "twitters" && (
         <StyledImage
           alt={title}
-          src={`https://avatars.io/twitter/${twitterName}`}
+          src={`https://twitter-avatar.now.sh/${twitterName}`}
         />
       )}
-      <Button as={Link} to={`/${pageType}`}>
-        save/close
+      <Button as={Link} to={`/${pageType}`} activecolor={pageType}>
+        save / close
       </Button>
     </StyledWrapper>
   </UserPageTemplate>

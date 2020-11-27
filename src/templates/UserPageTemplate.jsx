@@ -19,4 +19,8 @@ UserPageTemplate.propTypes = {
   pageType: PropTypes.oneOf(["articles", "notes", "twitters"]),
 };
 
+UserPageTemplate.defaultProps = {
+  pageType: "notes",
+};
+
 export default UserPageTemplate;

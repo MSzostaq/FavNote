@@ -10,19 +10,20 @@ import LinkIcon from "../../../assets/icons/link.svg";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 
 const StyledWrapper = styled.div`
-  box-shadow: 0 10px 30px 10px hsla(0, 0%, 0% 0.1);
+  box-shadow: 0px 1px 2px 1px #888888;
   border-radius: 10px;
   display: grid;
   grid-template-rows: 0.25fr 1fr;
   min-height: 350px;
   overflow: hidden;
+  position: relative;
 `;
 
 const InnerWrapper = styled.div`
   padding: 17px 30px;
   position: relative;
   background-color: ${({ activeColor, theme }) =>
-    activeColor ? theme[activeColor] : "#fff"};
+    activeColor ? theme[activeColor] : "#ffffff"};
 
   :first-of-type {
     z-index: 99;
@@ -58,7 +59,7 @@ const StyledAvatar = styled.img`
 `;
 
 const StyledLinkButton = styled.a`
-  background: "#fff" url(${LinkIcon}) no-repeat;
+  background: "#ffffff" url(${LinkIcon}) no-repeat;
   background-position: 50%;
   background-size: 60%;
   border-radius: 50px;
