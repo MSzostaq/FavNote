@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import MainTemplate from "../templates/MainTemplate";
 import { routes } from "../routes";
-import store from "store";
+import store from "../store/index";
 import Articles from "./Articles";
 import DetailsPage from "./DetailsPage";
 import Notes from "./Notes";

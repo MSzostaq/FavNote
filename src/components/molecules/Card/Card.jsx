@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { removeItem as removeItemAction } from "actions";
+import { removeItem as removeItemAction } from "../../../actions/index";
 import styled from "styled-components";
 import Button from "../../atoms/Button/Button";
 import Heading from "../../atoms/Heading/Heading";
