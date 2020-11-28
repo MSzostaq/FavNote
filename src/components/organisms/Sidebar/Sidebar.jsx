@@ -8,6 +8,7 @@ import logoIcon from "../../../assets/icons/logo.svg";
 import logoutIcon from "../../../assets/icons/logout.svg";
 import penIcon from "../../../assets/icons/pen.svg";
 import twitterIcon from "../../../assets/icons/twitter.svg";
+import withContext from "../../../hoc/withContext";
 
 const StyledWrapper = styled.nav`
   align-items: center;
@@ -56,8 +57,8 @@ const StyledLinksList = styled.ul`
   padding: 0;
 `;
 
-const Sidebar = ({ pageType }) => (
-  <StyledWrapper activeColor={pageType}>
+const Sidebar = ({ pageContext }) => (
+  <StyledWrapper activeColor={pageContext}>
     <StyledLogoLink to="/notes" />
     <StyledLinksList>
       <li>
@@ -90,11 +91,11 @@ const Sidebar = ({ pageType }) => (
 );
 
 Sidebar.propTypes = {
-  pageType: PropTypes.oneOf(["articles", "notes", "twitters"]),
+  pageContext: PropTypes.oneOf(["articles", "notes", "twitters"]),
 };
 
 Sidebar.defaultProps = {
-  pageType: "notes",
+  pageContext: "notes",
 };
 
-export default Sidebar;
+export default withContext(Sidebar);

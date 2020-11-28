@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../theme/GlobalStyle";
 import { theme } from "../theme/mainTheme";
+import PageContext from "../context/index";
 
 class MainTemplate extends Component {
   state = {
@@ -33,11 +34,14 @@ class MainTemplate extends Component {
 
   render() {
     const { children } = this.props;
+    const { pageType } = this.state;
 
     return (
       <div>
-        <GlobalStyle />
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <PageContext.Provider value={pageType}>
+          <GlobalStyle />
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </PageContext.Provider>
       </div>
     );
   }
