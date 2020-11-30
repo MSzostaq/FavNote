@@ -56,11 +56,11 @@ const DetailsTemplate = ({
   articleUrl,
   content,
   created,
-  pageType,
+  pageContext,
   title,
   twitterName,
 }) => (
-  <UserPageTemplate pageType={pageType}>
+  <UserPageTemplate pageType={pageContext}>
     <StyledWrapper>
       <StyledPageHeader>
         <StyledHeading big as="h1">
@@ -69,16 +69,16 @@ const DetailsTemplate = ({
         <StyledParagraph>{created}</StyledParagraph>
       </StyledPageHeader>
       <Paragraph>{content}</Paragraph>
-      {pageType === "articles" && (
+      {pageContext === "articles" && (
         <StyledLink href={articleUrl}>Open article</StyledLink>
       )}
-      {pageType === "twitters" && (
+      {pageContext === "twitters" && (
         <StyledImage
           alt={title}
           src={`https://twitter-avatar.now.sh/${twitterName}`}
         />
       )}
-      <Button as={Link} to={`/${pageType}`} activecolor={pageType}>
+      <Button as={Link} to={`/${pageContext}`} activeColor={pageContext}>
         save / close
       </Button>
     </StyledWrapper>

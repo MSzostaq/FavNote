@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeItem as removeItemAction } from "../../../actions/index";
 import styled from "styled-components";
+import withContext from "../../../hoc/withContext";
 import Button from "../../atoms/Button/Button";
 import Heading from "../../atoms/Heading/Heading";
 import LinkIcon from "../../../assets/icons/link.svg";
@@ -83,7 +84,7 @@ class Card extends Component {
     const {
       id,
       articleUrl,
-      cardType,
+      cardContext,
       content,
       created,
       title,
@@ -93,24 +94,24 @@ class Card extends Component {
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to={`${cardType}/details${id}`} />;
+      return <Redirect to={`${cardContext}/details${id}`} />;
     }
 
     return (
       <StyledWrapper onClick={this.handleCardClick}>
-        <InnerWrapper activeColor={cardType}>
+        <InnerWrapper activeColor={cardContext}>
           <StyledHeading>{title}</StyledHeading>
           <DateInfo>{created}</DateInfo>
-          {cardType === "twitters" && (
+          {cardContext === "twitters" && (
             <StyledAvatar
               src={`https://twitter-avatar.now.sh/${twitterName}`}
             />
           )}
-          {cardType === "articles" && <StyledLinkButton href={articleUrl} />}
+          {cardContext === "articles" && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>
         <InnerWrapper flex>
           <Paragraph>{content}</Paragraph>
-          <Button onClick={() => removeItem(cardType, id)} secondary>
+          <Button onClick={() => removeItem(cardContext, id)} secondary>
             Remove
           </Button>
         </InnerWrapper>
@@ -140,4 +141,4 @@ const mapDispatchToProps = (dispatch) => ({
   removeItem: (id, itemType) => dispatch(removeItemAction(id, itemType)),
 });
 
-export default connect(null, mapDispatchToProps)(Card);
+export default connect(null, mapDispatchToProps)(withContext(Card));
