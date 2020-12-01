@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
   right: 0;
   top: 0;
   transform: translate(${({ isVisible }) => (isVisible ? "0" : "100%")})
-  z-index: 999999;
+  z-index: 99999;
   transition: transform 0.5s ease-in-out;
 `;
 

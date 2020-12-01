@@ -55,7 +55,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 9999;
+  z-index: 99999;
 `;
 
 class GridTemplate extends Component {
@@ -87,7 +87,7 @@ class GridTemplate extends Component {
           <StyledButtonIcon
             onClick={this.handleNewItemBarToggle}
             icon={plusIcon}
-            activecolor={pageContext}
+            activeColor={pageContext}
           />
           <NewItemBar isVisible={isNewItemBarVisible} />
         </StyledWrapper>
