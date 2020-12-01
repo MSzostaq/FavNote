@@ -5,12 +5,11 @@ import GridTemplate from "../templates/GridTemplate";
 import Card from "../components/molecules/Card/Card";
 
 const Articles = ({ articles }) => (
-  <GridTemplate pageType="articles">
+  <GridTemplate>
     {articles.map(({ articleUrl, content, created, id, title }) => (
       <Card
         id={id}
         articleUrl={articleUrl}
-        cardType="articles"
         content={content}
         created={created}
         key={id}

@@ -18,8 +18,4 @@ UserPageTemplate.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.node]).isRequired,
 };
 
-UserPageTemplate.defaultProps = {
-  pageType: "notes",
-};
-
 export default UserPageTemplate;

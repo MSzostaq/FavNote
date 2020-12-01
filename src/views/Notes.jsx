@@ -9,7 +9,6 @@ const Notes = ({ notes }) => (
     {notes.map(({ content, created, id, title }) => (
       <Card
         id={id}
-        cardType="notes"
         content={content}
         created={created}
         title={title}

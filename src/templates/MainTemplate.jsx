@@ -46,6 +46,7 @@ class MainTemplate extends Component {
     );
   }
 }
+
 MainTemplate.propTypes = {
   children: PropTypes.element.isRequired,
 };

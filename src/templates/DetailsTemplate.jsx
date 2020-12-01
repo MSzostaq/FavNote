@@ -6,6 +6,7 @@ import UserPageTemplate from "./UserPageTemplate";
 import Button from "../components/atoms/Button/Button";
 import Heading from "../components/atoms/Heading/Heading";
 import Paragraph from "../components/atoms/Paragraph/Paragraph";
+import withContext from "../hoc/withContext";
 
 const StyledWrapper = styled.div`
   max-width: 200vh;
@@ -60,7 +61,7 @@ const DetailsTemplate = ({
   title,
   twitterName,
 }) => (
-  <UserPageTemplate pageType={pageContext}>
+  <UserPageTemplate>
     <StyledWrapper>
       <StyledPageHeader>
         <StyledHeading big as="h1">
@@ -102,4 +103,4 @@ DetailsTemplate.defaultProps = {
   twitterName: "",
 };
 
-export default DetailsTemplate;
+export default withContext(DetailsTemplate);

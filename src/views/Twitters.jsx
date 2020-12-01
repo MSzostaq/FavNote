@@ -9,7 +9,6 @@ const Twitters = ({ twitters }) => (
     {twitters.map(({ content, created, id, title, twitterName }) => (
       <Card
         id={id}
-        cardType="twitters"
         content={content}
         created={created}
         title={title}
@@ -21,14 +20,15 @@ const Twitters = ({ twitters }) => (
 );
 
 Twitters.propTypes = {
-  twitters: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    cardType: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    twitterName: PropTypes.string.isRequired,
-    created: PropTypes.string.isRequired,
-  }),
+  twitters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      twitterName: PropTypes.string.isRequired,
+      created: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 Twitters.defaultProps = {
