@@ -23,7 +23,7 @@ const StyledPageHeader = styled.div`
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 25px 0 0 0;
+  margin: 25px;
 
   ::first-letter {
     text-transform: uppercase;
@@ -38,7 +38,7 @@ const StyledParagraph = styled(Paragraph)`
 const StyledLink = styled.a`
   color: #000000;
   display: block;
-  font-size: ${({ theme }) => theme.font.size.xs};
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-weight: ${({ theme }) => theme.bold};
   margin: 20px 0 50px;
   text-transform: uppercase;

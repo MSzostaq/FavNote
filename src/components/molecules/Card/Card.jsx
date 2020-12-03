@@ -23,11 +23,10 @@ const StyledWrapper = styled.div`
 const InnerWrapper = styled.div`
   padding: 17px 30px;
   position: relative;
-  background-color: ${({ activeColor, theme }) =>
-    activeColor ? theme[activeColor] : "#ffffff"};
+  background-color: ${({ theme, activeColor }) => theme[activeColor]};
 
   :first-of-type {
-    z-index: 9999;
+    z-index: 99;
   }
 
   ${({ flex }) =>
@@ -66,11 +65,11 @@ const StyledLinkButton = styled.a`
   border-radius: 50px;
   display: block;
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 24px;
+  top: 24px;
   transform: translateY(-50%);
-  width: 47px;
-  height: 47px;
+  width: 48px;
+  height: 48px;
 `;
 
 class Card extends Component {
@@ -84,7 +83,7 @@ class Card extends Component {
     const {
       id,
       articleUrl,
-      cardContext,
+      pageContext,
       content,
       created,
       title,
@@ -94,24 +93,24 @@ class Card extends Component {
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to={`${cardContext}/details${id}`} />;
+      return <Redirect to={`${pageContext}/details${id}`} />;
     }
 
     return (
       <StyledWrapper onClick={this.handleCardClick}>
-        <InnerWrapper activeColor={cardContext}>
+        <InnerWrapper activeColor={pageContext}>
           <StyledHeading>{title}</StyledHeading>
           <DateInfo>{created}</DateInfo>
-          {cardContext === "twitters" && (
+          {pageContext === "twitters" && (
             <StyledAvatar
               src={`https://twitter-avatar.now.sh/${twitterName}`}
             />
           )}
-          {cardContext === "articles" && <StyledLinkButton href={articleUrl} />}
+          {pageContext === "articles" && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>
         <InnerWrapper flex>
           <Paragraph>{content}</Paragraph>
-          <Button onClick={() => removeItem(cardContext, id)} secondary>
+          <Button onClick={() => removeItem(pageContext, id)} secondary>
             Remove
           </Button>
         </InnerWrapper>
@@ -122,7 +121,7 @@ class Card extends Component {
 
 Card.propTypes = {
   id: PropTypes.number.isRequired,
-  cardType: PropTypes.oneOf(["notes", "twitters", "articles"]),
+  cardContext: PropTypes.oneOf(["notes", "twitters", "articles"]),
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
   twitterName: PropTypes.string,
@@ -132,7 +131,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  cardType: "notes",
+  cardContext: "notes",
   twitterName: null,
   articleUrl: null,
 };
