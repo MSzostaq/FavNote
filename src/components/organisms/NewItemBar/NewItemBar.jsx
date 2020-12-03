@@ -12,7 +12,7 @@ import { addItem as addItemAction } from "../../../actions/index";
 const StyledWrapper = styled.div`
   background-color: #ffffff;
   border-left: 10px solid ${({ theme, activeColor }) => theme[activeColor]};
-  box-shadow: 0px 1px 2px 1px #888888;
+  box-shadow: 0 0 0 1px #888888;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -21,9 +21,9 @@ const StyledWrapper = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  transform: translate(${({ isVisible }) => (isVisible ? "0" : "100%")})
-  z-index: 99999999;
+  transform: translate(${({ isVisible }) => (isVisible ? "0%" : "100%")})
   transition: transform 0.5s ease-in-out;
+  z-index: 99999;
 `;
 
 const StyledTextArea = styled(Input)`
@@ -39,6 +39,10 @@ const StyledInput = styled(Input)`
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
+`;
+
+const StyledButton = styled(Button)`
+  background-color: ${({ theme, activeColor }) => theme[activeColor]};
 `;
 
 const NewItemBar = ({ addItem, handleClose, pageContext, isVisible }) => (
@@ -95,9 +99,9 @@ const NewItemBar = ({ addItem, handleClose, pageContext, isVisible }) => (
             onChange={handleChange}
             value={values.twitterName}
           ></StyledTextArea>
-          <Button type="submit" activeColor={pageContext}>
+          <StyledButton type="submit" activeColor={pageContext}>
             Add Note
-          </Button>
+          </StyledButton>
         </StyledForm>
       )}
     </Formik>
@@ -106,7 +110,7 @@ const NewItemBar = ({ addItem, handleClose, pageContext, isVisible }) => (
 
 NewItemBar.propTypes = {
   pageContext: PropTypes.oneOf(["articles", "notes", "twitters"]),
-  isCisible: PropTypes.bool,
+  isVisible: PropTypes.bool,
   addItem: PropTypes.func.isRequired,
 };
 

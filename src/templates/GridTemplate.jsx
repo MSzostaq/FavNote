@@ -18,10 +18,10 @@ const StyledWrapper = styled.div`
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 85px;
+  grid-gap: 48px;
 
   @media (max-width: 1500px) {
-    grid-gap: 45px;
+    grid-gap: 48px;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -55,7 +55,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 99999;
+  z-index: 9999999;
 `;
 
 class GridTemplate extends Component {
