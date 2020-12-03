@@ -23,9 +23,11 @@ const StyledWrapper = styled.div`
 const InnerWrapper = styled.div`
   padding: 17px 30px;
   position: relative;
-  background-color: ${({ theme, activeColor }) => theme[activeColor]};
+  background-color: ${({ activeColor, theme }) =>
+    activeColor ? theme[activeColor] : "#ffffff"};
+
   :first-of-type {
-    z-index: 999999;
+    z-index: 9999;
   }
 
   ${({ flex }) =>
@@ -58,7 +60,7 @@ const StyledAvatar = styled.img`
 `;
 
 const StyledLinkButton = styled.a`
-  background: "#ffffff" url(${LinkIcon}) no-repeat;
+  background-color: "#ffffff" url(${LinkIcon}) no-repeat;
   background-position: 50%;
   background-size: 60%;
   border-radius: 50px;

@@ -87,7 +87,7 @@ const DetailsTemplate = ({
 );
 
 DetailsTemplate.propTypes = {
-  pageType: PropTypes.string.isRequired,
+  pageContext: PropTypes.oneOf(["notes", "articles", "twitters"]).isRequired,
   title: PropTypes.string,
   created: PropTypes.string,
   content: PropTypes.string,
