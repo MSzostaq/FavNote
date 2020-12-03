@@ -9,8 +9,8 @@ import Paragraph from "../components/atoms/Paragraph/Paragraph";
 import withContext from "../hoc/withContext";
 
 const StyledWrapper = styled.div`
-  max-width: 200vh;
-  padding: 25px 150px 25px 75px;
+  padding: 25px 150px 25px 70px;
+  max-width: 60vw;
   position: relative;
 
   @media (max-width: 1200px) {
@@ -23,7 +23,7 @@ const StyledPageHeader = styled.div`
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 25px;
+  margin: 25px 0 0 0;
 
   ::first-letter {
     text-transform: uppercase;
@@ -32,14 +32,14 @@ const StyledHeading = styled(Heading)`
 
 const StyledParagraph = styled(Paragraph)`
   font-weight: ${({ theme }) => theme.light};
-  margin: 0 px;
+  margin: 0px;
 `;
 
 const StyledLink = styled.a`
-  color: #000000;
   display: block;
   font-size: ${({ theme }) => theme.fontSize.xs};
   font-weight: ${({ theme }) => theme.bold};
+  color: #000000;
   margin: 20px 0 50px;
   text-transform: uppercase;
 `;
@@ -51,6 +51,14 @@ const StyledImage = styled.img`
   width: 120px;
   height: 120px;
   border-radius: 50%;
+`;
+
+const StyledButton = styled(Button)`
+  background-color: ${({ theme, activeColor }) => theme[activeColor]};
+  font-color: #000000;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  font-weight: ${({ theme }) => theme.bold};
+  text-decoration: none;
 `;
 
 const DetailsTemplate = ({
@@ -79,9 +87,9 @@ const DetailsTemplate = ({
           src={`https://twitter-avatar.now.sh/${twitterName}`}
         />
       )}
-      <Button as={Link} to={`/${pageContext}`} activeColor={pageContext}>
+      <StyledButton as={Link} to={`/${pageContext}`} activeColor={pageContext}>
         save / close
-      </Button>
+      </StyledButton>
     </StyledWrapper>
   </UserPageTemplate>
 );
